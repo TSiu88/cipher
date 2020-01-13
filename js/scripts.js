@@ -16,7 +16,7 @@ function letterCipher(sentence){
   var firstLast = firstLastCapital(sentence);
   var lastFirst = reverseLetters(firstLast);
   var encoded = sentence + lastFirst;
-  console.log(encoded);
+  //console.log(encoded);
   return encoded;
 }
 
@@ -31,7 +31,7 @@ function ultraEncoding(str){
 function bonusExercise(str){
   var newStr = ultraEncoding(str);
   var finalStr = reverseLetters(newStr);
-  //console.log(finalStr);
+  console.log(finalStr);
   return finalStr;
 }
 
