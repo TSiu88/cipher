@@ -20,11 +20,36 @@ function letterCipher(sentence){
   return encoded;
 }
 
+function ultraEncoding(str){
+  var middleLetter = str.charAt(Math.floor(str.length-1)/2);
+  //console.log(middleLetter);
+  newStr = middleLetter + letterCipher(str);
+  //console.log(newStr);
+  return newStr;
+}
+
+function bonusExercise(str){
+  var newStr = ultraEncoding(str);
+  var finalStr = reverseLetters(newStr);
+  //console.log(finalStr);
+  return finalStr;
+}
+
 $(document).ready(function(){
 
   var userSentence = prompt("Enter sentence");
   console.log(userSentence);
 
-  letterCipher(userSentence);  
-  
+  //letterCipher(userSentence);  
+  bonusExercise(userSentence);
+
+  $("#originalText").click(function() {
+    $("#revealedText").empty();
+    $("#revealedText").append(userSentence);
+  });
+
+  $("#encodedText").click(function() {
+    $("#revealedText").empty();
+    $("#revealedText").append(bonusExercise(userSentence));
+  });
 });
