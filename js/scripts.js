@@ -16,15 +16,15 @@ function letterCipher(sentence){
   var firstLast = firstLastCapital(sentence);
   var lastFirst = reverseLetters(firstLast);
   var encoded = sentence + lastFirst;
-  //console.log(encoded);
+  console.log(encoded);
   return encoded;
 }
 
 function ultraEncoding(str){
   var middleLetter = str.charAt(Math.floor(str.length-1)/2);
-  //console.log(middleLetter);
+  console.log(middleLetter);
   newStr = middleLetter + letterCipher(str);
-  //console.log(newStr);
+  console.log(newStr);
   return newStr;
 }
 
